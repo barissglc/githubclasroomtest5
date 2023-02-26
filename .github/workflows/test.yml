@@ -12,9 +12,10 @@ jobs:
 
       - name: Build unit.c
         run: gcc -o unit unit.c
-
+        
       - name: Commit changes
         run: |
+          date > generated.txt
           git config user.name mregungor
           git config user.email emre.gungor@ksbu.edu.tr
           git add .
