@@ -1,0 +1,22 @@
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build unit.c
+        run: gcc -o unit unit.c
+
+      - name: Commit changes
+        run: |
+          git config user.name mregungor
+          git config user.email emre.gungor@ksbu.edu.tr
+          git add .
+          git commit -m "generated"
+          git push
