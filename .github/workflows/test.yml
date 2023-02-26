@@ -17,7 +17,7 @@ jobs:
         run: |
           date > generated.txt
           echo not.txt
-          unit
+          ./unit
           git config user.name mregungor
           git config user.email emre.gungor@ksbu.edu.tr
           git add .
